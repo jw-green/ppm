@@ -1,0 +1,38 @@
+@import '../base/flex';
+@import '../base/settings';
+
+.headline_wrapper {
+    @extend %flex_left_right;
+    height: 50px;
+    background-color: $clr-main;
+} 
+
+.headline_left {
+    @extend %flex_base;
+} 
+
+.headline_icon {
+    @extend %flex_base;
+    height: 50px;
+} 
+
+.headline_icon-img {
+    margin: 0 20px;
+} 
+
+.headline_titles {
+    @extend %flex_base;
+} 
+
+.headline_titles-main {
+    color: $dark-main;
+    font-size: 1.25em;
+    width: auto;
+    font-weight: 300;
+    font-family: $default-hff;
+}
+
+.headline_right {
+    @extend %flex_base;
+} 
+

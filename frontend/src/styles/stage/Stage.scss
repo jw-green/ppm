@@ -1,0 +1,293 @@
+@import '../base/flex';
+@import '../base/settings';
+
+.stage_wrapper {
+    @extend %flex_base;
+    flex-direction: column;
+}
+
+.stage_main {
+    @extend %flex_base;
+    width: 100%;
+    flex-direction: column;
+
+    h1 {
+        font-family: $default-hff;
+        color: $clr-main;
+        font-size: 3.25em;
+    }
+}
+
+.stage_banner {
+    @extend %flex_center;
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    @extend %flex_center;
+    flex-direction: column;
+    padding: 50px 0 100px 0;
+    width: 100%;
+    background-color: $accent;
+    // background-color: #08AEEA;
+    background-image: linear-gradient(45deg, #2AF598 0%, #08AEEA 60%);
+
+    // background-image: linear-gradient(45deg, #FEE140 0%, #FA709A 34%, #ec316d 100%);
+    color: white;
+
+    h1 {
+        font-family: $default-hff;
+        font-size: 5em;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin: 50px 0 0 0;
+    }
+
+    h2 {
+        font-family: $default-ff;
+        font-weight: 200;
+        color: $dark-main;
+    }
+}
+
+
+// MULTI
+
+.stage_multi {
+    @extend %flex_center;
+    width: 100%;
+    flex-direction: row;
+}
+
+%tile {
+    border-radius: 3px;
+    background-color: $clr-main;
+    height: 200px;
+    width: 200px;
+    margin: 40px 10px 10px 20px;
+}
+
+.python_tile,
+.new_project_tile,
+.bash_tile {
+    @extend %tile;
+}
+
+// HERO
+
+
+%hero {
+    @extend %flex_base;
+    // background-color: $clr-main;
+    height: 800px;
+    width: 100%;
+    margin: 20px;
+}
+
+.current_projects {
+    @extend %hero;
+    background-color: transparent;
+}
+
+.latest_packages {
+    // @extend %hero;
+    @extend %flex_center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    font-family: $default-ff;
+    width: 100%;
+    height: 500px;
+
+    .package_table {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-family: $default-hff;
+        color: $clr-main;
+        font-size: 3.25em;
+    }
+
+    table {
+        background: transparent;
+        border-collapse: collapse;
+        font-weight: 200;
+        width: 100%;
+
+        tbody {
+            display: block;
+            max-height: 400px;
+            overflow-y: scroll;
+            width: auto;
+
+            tr:nth-child(odd) {
+                background-color: #f6f6f6;
+            }
+
+            td {
+                min-width: 200px;
+            }
+        }
+
+        thead {
+            display: block;
+            max-height: 200px;
+            overflow-y: scroll;
+            border-bottom: solid 1px #f6f6f6;
+
+            th {
+                min-width: 200px;
+            }
+        }
+
+        th {
+            color: #bbb;
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            min-width: 100px;
+            text-align: left;
+            padding: 5px;
+            padding-bottom: 15px;
+        }
+
+        td {
+            padding: 5px;
+            text-align: left;
+
+            .tag {
+                border-radius: 3px;
+                padding: 4px 10px;
+                background-color: $python-clr;
+                color: white;
+                font-size: 0.85em;
+            }
+
+            .delete {
+                filter: 
+                    invert(0.5)
+                    sepia(1)
+                    saturate(4)
+                    hue-rotate(300deg);
+                transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+                &:hover {
+                    filter:
+                        invert(0.5)
+                        sepia(1)
+                        saturate(4)
+                        hue-rotate(300deg)
+                        brightness(0.8);
+                    cursor: pointer;
+                }
+            }
+
+            .package_link { 
+                @extend %tran-main;
+            }
+
+            .package_link:hover { 
+                color: $clr-main;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------- 
+   FORMS
+-------------------------------------------------------------- */
+
+.new_package {
+    @extend %flex_center;
+    flex-direction: column;
+
+    h1 {
+        font-family: $default-hff;
+        color: $clr-main;
+        font-size: 3.25em;
+    }
+}
+
+.new_package_form {
+    @extend %flex_base;
+    flex-direction: column;
+    font-family: $default-ff;
+    font-weight: 100;
+    width: 100%;
+    justify-content: center;
+
+    input, textarea {
+        border: solid 1px rgba(255, 255, 255, 0);
+        border-radius: 4px;
+        width: 40%;
+        font-size: 1.25em;
+        background-color: $input-clr;
+        padding: 8px 10px;
+        font-weight: 300;
+        margin: 5px 0;
+        appearance: none;
+        box-shadow: none;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    
+    input:focus, textarea:focus {
+        outline: none;
+        // background-color: hsla(246, 45%, 15%, 1);
+        border: solid 1px rgba(8, 174, 234, 0.473);
+    }
+
+    ::placeholder {
+        color: rgba(2, 117, 158, 0.39)
+      }
+
+    .btn {
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+        margin: 40px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+
+        background: #17aa56;
+        color: #fff;
+        border-radius: 7px;
+        box-shadow: 0 5px #119e4d;
+        padding: 25px 60px;
+    }
+
+    .btn:active {
+        color: #eee;
+        background: #119e4d;
+        transform: translateY(5px);
+        box-shadow: inset #094b25;
+    }
+}
+
+.toolbar {
+    @extend %flex_base;
+    
+    margin-top: 5%;
+    width: 80%;
+
+    img {
+        height: 30px;
+        filter: invert(0.85);
+        @extend %tran-main;
+    }
+
+    div:hover > img{
+        filter: invert(0.5)
+                sepia(1)
+                saturate(3)
+                hue-rotate(160deg);
+        cursor: pointer;
+    }
+}

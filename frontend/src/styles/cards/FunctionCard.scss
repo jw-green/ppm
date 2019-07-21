@@ -1,0 +1,75 @@
+@import '../base/flex';
+@import '../base/settings';
+
+.function_card_wrapper {
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+    width: 250px;
+    height: 200px;
+    margin: 10px;
+    padding: 20px 30px;
+
+    .headline {
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .name {
+            font-family: $default-hff;
+            font-weight: 400;
+            font-size: 1.5em;
+            text-align: left;
+            color: $clr-main;
+        }
+
+        .name:hover {
+            cursor: pointer;
+        }
+
+        .favorite {
+            height: 25px;
+            filter: invert(0.85);
+            @extend %tran-main;
+        }
+
+        .red {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(310deg);
+            cursor: pointer;
+
+            &:hover {
+                filter: invert(0.35) sepia(1) saturate(5) hue-rotate(310deg);
+            }
+        }
+
+        .delete {
+            height: 15px;
+        }
+
+        .favorite:hover {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(310deg);
+            cursor: pointer;
+        }
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .content {
+        .description {
+            @extend %flex_base;
+            margin: 15px 0px;
+            font-weight: 200;
+        }
+
+        .delete {
+            height: 20px;
+            filter: invert(0.85);
+            @extend %tran-main;
+        }
+
+        .delete:hover {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(310deg);
+            cursor: pointer;
+        }
+    }
+}

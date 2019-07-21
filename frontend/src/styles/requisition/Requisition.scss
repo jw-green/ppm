@@ -1,0 +1,22 @@
+@import '../base/flex';
+
+.requisition_wrapper {
+    @extend %flex_base;
+} 
+
+.requisition_header {
+    @extend %flex_base;
+} 
+
+.requisition_title {
+    @extend %flex_base;
+} 
+
+.requisition_subtitle {
+    @extend %flex_base;
+} 
+
+.requisition_form {
+    @extend %flex_base;
+} 
+

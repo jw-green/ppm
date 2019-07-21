@@ -1,0 +1,31 @@
+// COLORS
+// ---------------------------
+
+$clr-lightblue: #4BCEFA;
+$clr-pink:      #F96EC4;
+$clr-orange:    #FFB400;
+$clr-green:     #8DD400;
+$clr-main:    #009edc;
+// $clr-main:    #ec316d;
+$accent: $clr-lightblue;
+// $accent: #FA709A;
+$dark-main: #006f9b;
+$input-clr: rgba(0, 179, 255, 0.103);
+
+$python-clr: #306998;
+
+
+// DEFAULTS
+// ========================
+
+$default-ff: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+$default-hff: 'Permanent Marker', $default-ff;
+
+// TRANSITIONS
+// ========================
+
+%tran-main {
+    transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

@@ -1,0 +1,90 @@
+@import '../base/settings';
+@import '../base/flex';
+
+.code_editor_wrapper {
+    @extend %flex_base;
+    width: 80%;
+    flex-direction: column;
+
+    .package_titles {
+        width: 100%;
+
+        .name {
+            font-family: $default-hff;
+            color: $clr-main;
+            font-size: 3em;
+            text-align: left;
+        } 
+    
+        /*TAGS*/
+    
+        .tag-large {
+            border-radius: 50px;
+            padding: 8px 10px;
+            background-color: #306998;
+            color: white;
+            font-weight: 300;
+            max-width: 100px;
+            box-shadow: 0 5px #234e70;
+    
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+    
+    }
+    
+    .package_content {
+        @extend %flex_base;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .code_editor {
+        margin: 5% 0 10% 0;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        width: 100%;
+        padding: 20px;
+        text-align: right;
+
+        .code_area {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            min-height: 50vh;
+            outline: none;
+            border: none;
+        }
+
+        .btn-small {
+            width: 20%;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .copy_dialog {
+            // display: flex;
+            // width: 80px;
+            // float: right;
+
+            .copyFunction {
+                padding-top: 5px;
+                filter: invert(0.8);
+                cursor: pointer;
+                transition: 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+        
+                &:hover {
+                    filter: invert(0.5) sepia(1) saturate(4) hue-rotate(150deg);
+                }
+            }
+
+        }
+
+        pre {
+            text-align: left;
+        }
+    }
+}
